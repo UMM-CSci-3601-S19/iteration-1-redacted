@@ -5,6 +5,7 @@
     },
     "makeModel": "Honda civic",
     "year": 2007,
+    "color": "yellow",
     "mpg": 21,
     "notes": "Amet ipsum id veniam qui adipisicing magna."
   },
@@ -14,6 +15,7 @@
     },
     "makeModel": "Honda civic",
     "year": 1991,
+    "color": "black",
     "mpg": 15,
     "notes": "Deserunt in nisi nulla ullamco fugiat."
   },
@@ -23,6 +25,7 @@
     },
     "makeModel": "Honda fit",
     "year": 2010,
+    "color": "red",
     "mpg": 16,
     "notes": "Ex aliqua irure consequat deserunt proident proident ut."
   },
@@ -32,6 +35,7 @@
     },
     "makeModel": "Honda pilot",
     "year": 2005,
+    "color": "green",
     "mpg": 21,
     "notes": "Fugiat amet sit ipsum exercitation labore consequat."
   },
@@ -41,6 +45,7 @@
     },
     "makeModel": "Honda pilot",
     "year": 1991,
+    "color": "purple",
     "mpg": 24,
     "notes": "Ut consectetur officia ullamco aute adipisicing ut consectetur."
   },
@@ -50,6 +55,7 @@
     },
     "makeModel": "Honda civic",
     "year": 1996,
+    "color": "pink",
     "mpg": 19,
     "notes": "Lorem sunt culpa sint nisi sunt dolor et et."
   },
@@ -59,6 +65,7 @@
     },
     "makeModel": "Honda fit",
     "year": 2000,
+    "color": "magenta",
     "mpg": 23,
     "notes": "Ut esse in aute aliquip proident culpa pariatur est do enim ut dolore magna."
   },
@@ -68,6 +75,7 @@
     },
     "makeModel": "Honda odyssey",
     "year": 2007,
+    "color": "cyan",
     "mpg": 15,
     "notes": "Aliquip pariatur anim deserunt enim."
   },
@@ -77,6 +85,7 @@
     },
     "makeModel": "Honda odyssey",
     "year": 2007,
+    "color": "orange",
     "mpg": 24,
     "notes": "Adipisicing aute pariatur tempor sit deserunt eiusmod voluptate laboris mollit et nisi amet adipisicing et."
   },
@@ -86,6 +95,7 @@
     },
     "makeModel": "Honda odyssey",
     "year": 2003,
+    "color": "grey",
     "mpg": 27,
     "notes": "Lorem deserunt occaecat quis qui."
   }
