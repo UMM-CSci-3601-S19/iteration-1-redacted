@@ -1,0 +1,92 @@
+[
+  {
+    "_id": {
+      "$oid": "5c81820bc740721554dd9372"
+    },
+    "makeModel": "Honda civic",
+    "year": 2007,
+    "mpg": 21,
+    "notes": "Amet ipsum id veniam qui adipisicing magna."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820b8b8c19351ce68df6"
+    },
+    "makeModel": "Honda civic",
+    "year": 1991,
+    "mpg": 15,
+    "notes": "Deserunt in nisi nulla ullamco fugiat."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820bac96e84083d42dbf"
+    },
+    "makeModel": "Honda fit",
+    "year": 2010,
+    "mpg": 16,
+    "notes": "Ex aliqua irure consequat deserunt proident proident ut."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820b80f223f8a09a54da"
+    },
+    "makeModel": "Honda pilot",
+    "year": 2005,
+    "mpg": 21,
+    "notes": "Fugiat amet sit ipsum exercitation labore consequat."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820b37fbfa28a972cc24"
+    },
+    "makeModel": "Honda pilot",
+    "year": 1991,
+    "mpg": 24,
+    "notes": "Ut consectetur officia ullamco aute adipisicing ut consectetur."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820b2394be5ff5e4bbab"
+    },
+    "makeModel": "Honda civic",
+    "year": 1996,
+    "mpg": 19,
+    "notes": "Lorem sunt culpa sint nisi sunt dolor et et."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820b511afa48af27676b"
+    },
+    "makeModel": "Honda fit",
+    "year": 2000,
+    "mpg": 23,
+    "notes": "Ut esse in aute aliquip proident culpa pariatur est do enim ut dolore magna."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820bb079363a5184854e"
+    },
+    "makeModel": "Honda odyssey",
+    "year": 2007,
+    "mpg": 15,
+    "notes": "Aliquip pariatur anim deserunt enim."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820b1d09c50e67a76cc9"
+    },
+    "makeModel": "Honda odyssey",
+    "year": 2007,
+    "mpg": 24,
+    "notes": "Adipisicing aute pariatur tempor sit deserunt eiusmod voluptate laboris mollit et nisi amet adipisicing et."
+  },
+  {
+    "_id": {
+      "$oid": "5c81820b94c1132a6d4311bd"
+    },
+    "makeModel": "Honda odyssey",
+    "year": 2003,
+    "mpg": 27,
+    "notes": "Lorem deserunt occaecat quis qui."
+  }
+]
