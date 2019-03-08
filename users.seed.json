@@ -3,10 +3,7 @@
     "_id": {
       "$oid": "5c8182219c17a382459616d3"
     },
-    "name": {
-      "first": "Lakeisha",
-      "last": "Vaughan"
-    },
+    "name": "Lakeisha Vaughan",
     "vehicle": "5c81820bc740721554dd9372",
     "phone": [
       "(801) 553-3894",
@@ -18,10 +15,7 @@
     "_id": {
       "$oid": "5c818221b175acfb3fc2e96f"
     },
-    "name": {
-      "first": "Annabelle",
-      "last": "Slater"
-    },
+    "name": "Annabelle Slater",
     "vehicle": "5c81820b8b8c19351ce68df6",
     "phone": [
       "(854) 529-3425",
@@ -33,10 +27,7 @@
     "_id": {
       "$oid": "5c818221b280238ab5a8f011"
     },
-    "name": {
-      "first": "Langley",
-      "last": "Oliver"
-    },
+    "name": "Langley Oliver",
     "vehicle": "5c81820bac96e84083d42dbf",
     "phone": [
       "(996) 560-3678",
@@ -48,10 +39,7 @@
     "_id": {
       "$oid": "5c8182212f608130b228e558"
     },
-    "name": {
-      "first": "Sofia",
-      "last": "Sharp"
-    },
+    "name": "Sofia Sharp",
     "vehicle": "5c81820b80f223f8a09a54da",
     "phone": [
       "(875) 571-3867",
@@ -63,10 +51,7 @@
     "_id": {
       "$oid": "5c8182210f4b0ca186f67140"
     },
-    "name": {
-      "first": "Jessica",
-      "last": "Cherry"
-    },
+    "name": "Jessica Cherry",
     "vehicle": "5c81820b37fbfa28a972cc24",
     "phone": [
       "(977) 529-3948",
@@ -78,10 +63,7 @@
     "_id": {
       "$oid": "5c818221a334aee6d92f0fb3"
     },
-    "name": {
-      "first": "Alisa",
-      "last": "Delaney"
-    },
+    "name": "Alisa Delaney",
     "vehicle": "5c81820b2394be5ff5e4bbab",
     "phone": [
       "(846) 600-3307",
@@ -93,10 +75,7 @@
     "_id": {
       "$oid": "5c818221857c563cbe74401a"
     },
-    "name": {
-      "first": "Long",
-      "last": "Charles"
-    },
+    "name": "Long Charles",
     "vehicle": "5c81820b511afa48af27676b",
     "phone": [
       "(851) 555-3450",
@@ -108,10 +87,7 @@
     "_id": {
       "$oid": "5c8182218f0266d5b7e5d65e"
     },
-    "name": {
-      "first": "Ortega",
-      "last": "Lawson"
-    },
+    "name": "Ortega Lawson",
     "vehicle": "5c81820bb079363a5184854e",
     "phone": [
       "(900) 476-3896",
@@ -123,10 +99,7 @@
     "_id": {
       "$oid": "5c81822172bc00cc47786a07"
     },
-    "name": {
-      "first": "Eleanor",
-      "last": "Barlow"
-    },
+    "name": "Eleanor Barlow",
     "vehicle": "5c81820b1d09c50e67a76cc9",
     "phone": [
       "(813) 504-2445",
@@ -138,10 +111,7 @@
     "_id": {
       "$oid": "5c818221d90dfe043fc670eb"
     },
-    "name": {
-      "first": "Terra",
-      "last": "Osborn"
-    },
+    "name": "Terra Osborn",
     "vehicle": "5c81820b94c1132a6d4311bd",
     "phone": [
       "(980) 432-2406",
