@@ -10,12 +10,15 @@
       <mat-divider></mat-divider>
       <mat-card-content>
 
-        <button mat-raised-button id="submit" color="primary" #input type="button" (click)="loadService()">Submit
-        </button>
+        <mat-card *ngIf="rides; else ridesError" >
+            <mat-card *ngFor="let ride of this.filterRides()">
+              <mat-card-title>{{ride.route[ride.route.length-1]}}</mat-card-title>
 
-        <mat-accordion *ngIf="rides; else ridesError">
 
-        </mat-accordion>
+
+            <mat-card-content>{{ride.driver}}<br/>{{ride.riders}}<br/>{{ride.dateTime}}}<br/>{{ride.notes}}</mat-card-content>
+            </mat-card>
+        </mat-card>
         <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
         <ng-template #ridesError>
           <mat-error>

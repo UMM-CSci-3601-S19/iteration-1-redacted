@@ -4,7 +4,7 @@
       "$oid": "5c81956426f729a694221541"
     },
     "driver": "Janice Gibbs",
-    "riders": [""],
+    "riders": ["Rider1", "Rider2"],
     "route": [
       "Martell",
       "Hollymead"
