@@ -1,12 +1,10 @@
-import {User} from "../users/user";
 
 export interface Ride {
-  driver: object[];
-  riders: User[];
-  destination: string;
-  origin: string;
+  driver: string;
+  riders: string[];
+  _id: string;
+  route: string[];
   roundTrip: boolean;
-  //depatureTime: ;
-  driving: boolean;
+  dateTime: string;
   notes: string;
 }
