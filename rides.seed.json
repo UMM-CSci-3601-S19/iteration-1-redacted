@@ -4,7 +4,7 @@
       "$oid": "5c81956426f729a694221541"
     },
     "driver": "Janice Gibbs",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Martell",
       "Hollymead"
@@ -18,7 +18,7 @@
       "$oid": "5c8195647df487e29e4d241b"
     },
     "driver": "Vilma Rush",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Yettem",
       "Longbranch"
@@ -32,7 +32,7 @@
       "$oid": "5c819564559e8f42ed7a6555"
     },
     "driver": "Elsa Frazier",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Robinette",
       "Chautauqua"
@@ -46,7 +46,7 @@
       "$oid": "5c819564d2e04e5964d4fa68"
     },
     "driver": "Franks King",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Lupton",
       "Glenville"
@@ -60,7 +60,7 @@
       "$oid": "5c819564a6b5c13031c717b0"
     },
     "driver": "Arlene Talley",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Elfrida",
       "Alden"
@@ -74,7 +74,7 @@
       "$oid": "5c819564947c97ada85704d9"
     },
     "driver": "Luisa Griffith",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Rockbridge",
       "Wawona"
@@ -88,7 +88,7 @@
       "$oid": "5c8195643a97c1e5a17b9bee"
     },
     "driver": "Gilda Crawford",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Mooresburg",
       "Columbus"
@@ -102,7 +102,7 @@
       "$oid": "5c819564482545a202f18f38"
     },
     "driver": "Nadine Johnson",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Sylvanite",
       "Ogema"
@@ -116,7 +116,7 @@
       "$oid": "5c819564c07c6b7e18a0b2ee"
     },
     "driver": "Wilson House",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Hampstead",
       "Masthope"
@@ -130,7 +130,7 @@
       "$oid": "5c81956477f3f5871da617f1"
     },
     "driver": "Deloris Mendoza",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Kapowsin",
       "Drytown"
@@ -144,7 +144,7 @@
       "$oid": "5c819564a183ed6067ad19f4"
     },
     "driver": "Mejia Tillman",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Ladera",
       "Hoagland"
@@ -158,7 +158,7 @@
       "$oid": "5c819564905f50a9b34d7d88"
     },
     "driver": "Walter Keller",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Geyserville",
       "Chicopee"
@@ -172,7 +172,7 @@
       "$oid": "5c81956414073d2a7fec5eb6"
     },
     "driver": "Franco Wilkins",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Blanco",
       "Chloride"
@@ -186,7 +186,7 @@
       "$oid": "5c8195646f228acca2f69d63"
     },
     "driver": "Little Carr",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Valmy",
       "Sheatown"
@@ -200,7 +200,7 @@
       "$oid": "5c819564222e0b673c9d276b"
     },
     "driver": "Opal Cabrera",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Roeville",
       "Zortman"
@@ -214,7 +214,7 @@
       "$oid": "5c8195645f3076c4cc35271d"
     },
     "driver": "Osborne Wiggins",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Trexlertown",
       "Eden"
@@ -228,7 +228,7 @@
       "$oid": "5c819564f5102f2bca2c114e"
     },
     "driver": "Miller Walter",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Blackgum",
       "Sterling"
@@ -242,7 +242,7 @@
       "$oid": "5c81956426d81f7cee8187e6"
     },
     "driver": "Weeks Forbes",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Katonah",
       "Neahkahnie"
@@ -256,7 +256,7 @@
       "$oid": "5c81956424870d31e8718f48"
     },
     "driver": "Leann Norton",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Lumberton",
       "Brandywine"
@@ -270,7 +270,7 @@
       "$oid": "5c819564dc41f9ca362460cc"
     },
     "driver": "Rollins Price",
-    "riders": "",
+    "riders": [""],
     "route": [
       "Morriston",
       "Yorklyn"
