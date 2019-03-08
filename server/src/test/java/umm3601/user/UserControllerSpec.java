@@ -18,11 +18,6 @@ import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
-/**
- * JUnit tests for the UserController.
- * <p>
- * Created by mcphee on 22/2/17.
- */
 public class UserControllerSpec {
   private UserController userController;
   private ObjectId samsId;
@@ -36,41 +31,38 @@ public class UserControllerSpec {
     List<Document> testUsers = new ArrayList<>();
     testUsers.add(Document.parse("{\n" +
       "                    name: \"Chris\",\n" +
-      "                    age: 25,\n" +
-      "                    company: \"UMM\",\n" +
+      "                    vehicle: \"Honda Civic\",\n" +
+      "                    phone: [\"(123) 456 7890\",\n\"(234) 567 8901\"],\n" +
       "                    email: \"chris@this.that\"\n" +
       "                }"));
     testUsers.add(Document.parse("{\n" +
       "                    name: \"Pat\",\n" +
-      "                    age: 37,\n" +
-      "                    company: \"IBM\",\n" +
-      "                    email: \"pat@something.com\"\n" +
+      "                    vehicle: \"Honda Accord\",\n" +
+      "                    phone: [\"(345) 678 9012\",\n\"(456) 789 0123\"],\n" +
+      "                    email: \"chris@this.that\"\n" +
       "                }"));
     testUsers.add(Document.parse("{\n" +
       "                    name: \"Jamie\",\n" +
-      "                    age: 37,\n" +
-      "                    company: \"Frogs, Inc.\",\n" +
-      "                    email: \"jamie@frogs.com\"\n" +
+      "                    vehicle: \"Honda Odyssey\",\n" +
+      "                    phone: [\"(456) 789 7890\",\n\"(567) 890 1234\"],\n" +
+      "                    email: \"chris@this.that\"\n" +
       "                }"));
 
     samsId = new ObjectId();
+    List<String> samPhone = Arrays.asList("(789) 012 3456", "(890) 123 4567");
     BasicDBObject sam = new BasicDBObject("_id", samsId);
     sam = sam.append("name", "Sam")
-      .append("age", 45)
-      .append("company", "Frogs, Inc.")
+      .append("vehicle", "Honda Civic")
+      .append("phone", samPhone)
       .append("email", "sam@frogs.com");
 
 
     userDocuments.insertMany(testUsers);
     userDocuments.insertOne(Document.parse(sam.toJson()));
 
-    // It might be important to construct this _after_ the DB is set up
-    // in case there are bits in the constructor that care about the state
-    // of the database.
     userController = new UserController(db);
   }
 
-  // http://stackoverflow.com/questions/34436952/json-parse-equivalent-in-mongo-driver-3-x-for-java
   private BsonArray parseJsonArray(String json) {
     final CodecRegistry codecRegistry
       = CodecRegistries.fromProviders(Arrays.asList(
@@ -84,6 +76,7 @@ public class UserControllerSpec {
     return arrayReader.decode(reader, DecoderContext.builder().build());
   }
 
+  //Gets Name returns as a string
   private static String getName(BsonValue val) {
     BsonDocument doc = val.asDocument();
     return ((BsonString) doc.get("name")).getValue();
@@ -106,19 +99,19 @@ public class UserControllerSpec {
   }
 
   @Test
-  public void getUsersWhoAre37() {
+  public void getUserByName() {
     Map<String, String[]> argMap = new HashMap<>();
-    argMap.put("age", new String[]{"37"});
+    argMap.put("name", new String[]{"Chris"});
     String jsonResult = userController.getUsers(argMap);
     BsonArray docs = parseJsonArray(jsonResult);
 
-    assertEquals("Should be 2 users", 2, docs.size());
+    assertEquals("Should be 1 user", 1, docs.size());
     List<String> names = docs
       .stream()
       .map(UserControllerSpec::getName)
       .sorted()
       .collect(Collectors.toList());
-    List<String> expectedNames = Arrays.asList("Jamie", "Pat");
+    List<String> expectedNames = Arrays.asList("Chris");
     assertEquals("Names should match", expectedNames, names);
   }
 
@@ -129,16 +122,16 @@ public class UserControllerSpec {
     assertEquals("Name should match", "Sam", sam.get("name"));
     String noJsonResult = userController.getUser(new ObjectId().toString());
     assertNull("No name should match", noJsonResult);
-
   }
 
   @Test
   public void addUserTest() {
-    String newId = userController.addNewUser("Brian", 22, "umm", "brian@yahoo.com");
+    List<String> phoneNumbers = Arrays.asList("(808) 404 5005", "(735) 101 1337");
+    String newId = userController.addNewUser("Brian", "Brian's Vehicle", phoneNumbers, "brian@yahoo.com");
 
     assertNotNull("Add new user should return true when user is added,", newId);
     Map<String, String[]> argMap = new HashMap<>();
-    argMap.put("age", new String[]{"22"});
+    argMap.put("vehicle", new String[]{"Brian's Vehicle"});
     String jsonResult = userController.getUsers(argMap);
     BsonArray docs = parseJsonArray(jsonResult);
 
@@ -149,25 +142,4 @@ public class UserControllerSpec {
       .collect(Collectors.toList());
     assertEquals("Should return name of new user", "Brian", name.get(0));
   }
-
-  @Test
-  public void getUserByCompany() {
-    Map<String, String[]> argMap = new HashMap<>();
-    //Mongo in UserController is doing a regex search so can just take a Java Reg. Expression
-    //This will search the company starting with an I or an F
-    argMap.put("company", new String[]{"[I,F]"});
-    String jsonResult = userController.getUsers(argMap);
-    BsonArray docs = parseJsonArray(jsonResult);
-    assertEquals("Should be 3 users", 3, docs.size());
-    List<String> name = docs
-      .stream()
-      .map(UserControllerSpec::getName)
-      .sorted()
-      .collect(Collectors.toList());
-    List<String> expectedName = Arrays.asList("Jamie", "Pat", "Sam");
-    assertEquals("Names should match", expectedName, name);
-
-  }
-
-
 }

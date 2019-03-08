@@ -4,6 +4,9 @@ import org.bson.Document;
 import spark.Request;
 import spark.Response;
 
+import java.util.Date;
+import java.util.List;
+
 public class RideRequestHandler {
 
   private final RideController rideController;
@@ -38,18 +41,19 @@ public class RideRequestHandler {
     return rideController.getRides(req.queryMap().toMap());
   }
 
-//  public String addNewVehicle(Request req, Response res) {
-//    res.type("application/json");
-//
-//    Document newVehicle = Document.parse(req.body());
-//
-//    String makeModel = newVehicle.getString("makeModel");
-//    int year = newVehicle.getInteger("year");
-//    String color = newVehicle.getString("color");
-//    int mpg = newVehicle.getInteger("mpg");
-//    String notes = newVehicle.getString("notes");
-//
-//    System.err.println("Adding new vehicle [makeModel=" + makeModel + ", year=" + year + " color=" + color + " mpg=" + mpg + " notes=" + notes + ']');
-//    return rideController.addNewVehicle(makeModel, year, color, mpg, notes);
-//  }
+  public String addNewRide(Request req, Response res) {
+    res.type("application/json");
+
+    Document newRide = Document.parse(req.body());
+
+    String driver = newRide.getString("driver");
+    List<String> riders = newRide.getList("riders", String.class);
+    List<String> route = newRide.getList("route", String.class);
+    Boolean roundTrip = newRide.getBoolean("roundTrip");
+    Date dateTime = newRide.getDate("dateTime");
+    String notes = newRide.getString("notes");
+
+    System.err.println("Adding new vehicle [driver=" + driver + ", riders=" + riders + " route=" + route + " roundTrip=" + roundTrip + "dateTime=" + dateTime +" notes=" + notes + ']');
+    return rideController.addNewRide(driver, riders, route, roundTrip, dateTime, notes);
+  }
 }

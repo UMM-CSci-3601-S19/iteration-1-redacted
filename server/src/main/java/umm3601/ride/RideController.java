@@ -7,7 +7,9 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
+import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -68,23 +70,24 @@ public class RideController {
       .collect(Collectors.joining(", ", "[", "]"));
   }
 
-//  public String addNewRide(String makeModel, int year, String color, int mpg, String notes) {
-//
-//    Document newVehicle = new Document();
-//    newVehicle.append("makeModel", makeModel);
-//    newVehicle.append("year", year);
-//    newVehicle.append("color", color);
-//    newVehicle.append("mpg", mpg);
-//    newVehicle.append("notes", notes);
-//
-//    try {
-//      rideCollection.insertOne(newVehicle);
-//      ObjectId id = newVehicle.getObjectId("_id");
-//      System.err.println("Successfully added new vehicle [_id=" + id + ", makeModel=" + makeModel + ", year=" + year + " color=" + color + " mpg =" + mpg + " notes=" + notes + ']');
-//      return id.toHexString();
-//    } catch (MongoException me) {
-//      me.printStackTrace();
-//      return null;
-//    }
-//  }
+  public String addNewRide(String driver, List<String> riders, List<String> route, Boolean roundTrip, Date dateTime, String notes) {
+
+    Document newRide = new Document();
+    newRide.append("driver", driver);
+    newRide.append("riders", riders);
+    newRide.append("route", route);
+    newRide.append("roundTrip", roundTrip);
+    newRide.append("dateTime", dateTime);
+    newRide.append("notes", notes);
+
+    try {
+      rideCollection.insertOne(newRide);
+      ObjectId id = newRide.getObjectId("_id");
+      System.err.println("Successfully added new vehicle [_id=" + id + ", driver=" + driver + ", riders=" + riders + " route=" + route + " roundTrip =" + roundTrip + " dateTime=" + dateTime + " notes=" + notes + ']');
+      return id.toHexString();
+    } catch (MongoException me) {
+      me.printStackTrace();
+      return null;
+    }
+  }
 }
