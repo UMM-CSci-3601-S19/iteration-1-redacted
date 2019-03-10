@@ -45,6 +45,9 @@ describe('Ride list service: ', () => {
       notes: 'Velit culpa id mollit est Lorem.'
     }
   ];
+  const mRides: Ride[] = testRides.filter(ride =>
+    ride.driver.toLowerCase().indexOf('m') !== -1
+  );
 
 
   // We will need some url information from the rideListService to meaningfully test company filtering;
