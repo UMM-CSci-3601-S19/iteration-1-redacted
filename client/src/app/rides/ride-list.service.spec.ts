@@ -22,7 +22,7 @@ describe('Ride list service: ', () => {
     },
     {
       _id: '5c8195647df487e29e4d241b',
-      driver: '5c8195647df487e29e4d241b',
+      driver: 'Vilma Rush',
       riders: [],
       route: [
         "Yettem",
