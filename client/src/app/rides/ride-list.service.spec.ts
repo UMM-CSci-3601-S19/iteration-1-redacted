@@ -78,5 +78,14 @@ describe('Ride list service: ', () => {
     httpTestingController.verify();
   });
 
+  it('getRides() calls api/rides', () => {
+    rideListService.getRides().subscribe(
+      rides => expect(rides).toBe(testRides)
+    );
+    const req = httpTestingController.expectOne(rideListService.baseUrl);
+    expect(req.request.method).toEqual('GET');
+    req.flush(testRides);
+  });
+
 
 });
