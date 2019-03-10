@@ -8,7 +8,42 @@ import {RideListService} from './ride-list.service';
 describe('Ride list service: ', () => {
   // A small collection of test rides
   const testRides: Ride[] = [
-
+    {
+      _id: '5c81956426f729a694221541',
+      driver: 'Janice Gibbs',
+      riders: ["Rider1", "Rider2"],
+      route: [
+        "Martell",
+        "Hollymead"
+      ],
+      roundTrip: true,
+      dateTime: 'Tue Oct 22 2002 08:50:21 GMT+0000 (UTC)',
+      notes: 'Tempor sunt ipsum nostrud mollit eu ea id mollit elit ad eiusmod id et.'
+    },
+    {
+      _id: '5c8195647df487e29e4d241b',
+      driver: '5c8195647df487e29e4d241b',
+      riders: [],
+      route: [
+        "Yettem",
+        "Longbranch"
+      ],
+      roundTrip: false,
+      dateTime: 'Mon Jun 19 1989 06:14:16 GMT+0000 (UTC)',
+      notes: 'Consectetur aute culpa sint dolor aliquip.'
+    },
+    {
+      _id: '5c819564559e8f42ed7a6555',
+      driver: 'Elsa Frazier',
+      riders: [],
+      route: [
+        "Robinette",
+        "Chautauqua"
+      ],
+      roundTrip: false,
+      dateTime: 'Fri Aug 27 1982 17:11:44 GMT+0000 (UTC)',
+      notes: 'Velit culpa id mollit est Lorem.'
+    }
   ];
 
 
