@@ -4,7 +4,6 @@ import {Ride} from './ride';
 import {Observable} from 'rxjs/Observable';
 import {MatDialog} from '@angular/material';
 import {AddRideComponent} from "./add-ride.component";
-//import {AddRideComponent} from './add-ride.component';
 
 @Component({
   selector: 'ride-list-component',
@@ -35,7 +34,7 @@ export class RideListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const newRide: Ride = {_id: '', driver: '', riders: [''], route: [''], roundTrip: null, dateTime: '', notes: ''}
+    const newRide: Ride = {_id: '', driver: '', riders: [''], route: [''], roundTrip: null, dateTime: '', notes: ''};
     const dialogRef = this.dialog.open(AddRideComponent, {
       width: '500px',
       data: {ride: newRide}
