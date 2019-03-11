@@ -42,6 +42,7 @@ import {AddRideComponent} from "./rides/add-ride.component";
   ],
   entryComponents: [
     AddUserComponent,
+    AddRideComponent
   ],
   bootstrap: [AppComponent]
 })
