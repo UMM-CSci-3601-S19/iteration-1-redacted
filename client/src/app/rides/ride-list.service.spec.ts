@@ -87,5 +87,17 @@ describe('Ride list service: ', () => {
     req.flush(testRides);
   });
 
+  it('getRideById() calls api/rides/id', () => {
+    const targetRide: Ride = testRides[1];
+    const targetId: string = targetRide._id;
+    rideListService.getRideById(targetId).subscribe(
+      ride => expect(ride).toBe(targetRide)
+    );
+
+    const expectedUrl: string = rideListService.baseUrl + '/' + targetId;
+    const req = httpTestingController.expectOne(expectedUrl);
+    expect(req.request.method).toEqual('GET');
+    req.flush(targetRide);
+  });
 
 });
