@@ -23,7 +23,42 @@ describe('Ride list', () => {
     // stub RideService for test purposes
     rideListServiceStub = {
       getRides: () => Observable.of([
-
+        {
+          _id: '5c81956426f729a694221541',
+          driver: 'Janice Gibbs',
+          riders: ["Rider1", "Rider2"],
+          route: [
+            "Martell",
+            "Hollymead"
+          ],
+          roundTrip: true,
+          dateTime: 'Tue Oct 22 2002 08:50:21 GMT+0000 (UTC)',
+          notes: 'Tempor sunt ipsum nostrud mollit eu ea id mollit elit ad eiusmod id et.'
+        },
+        {
+          _id: '5c8195647df487e29e4d241b',
+          driver: 'Vilma Rush',
+          riders: [],
+          route: [
+            "Yettem",
+            "Longbranch"
+          ],
+          roundTrip: false,
+          dateTime: 'Mon Jun 19 1989 06:14:16 GMT+0000 (UTC)',
+          notes: 'Consectetur aute culpa sint dolor aliquip.'
+        },
+        {
+          _id: '5c819564559e8f42ed7a6555',
+          driver: 'Elsa Frazier',
+          riders: [],
+          route: [
+            "Robinette",
+            "Chautauqua"
+          ],
+          roundTrip: false,
+          dateTime: 'Fri Aug 27 1982 17:11:44 GMT+0000 (UTC)',
+          notes: 'Velit culpa id mollit est Lorem.'
+        }
       ])
     };
 
@@ -44,7 +79,21 @@ describe('Ride list', () => {
     });
   }));
 
+  it('contains all the rides', () => {
+    expect(rideList.rides.length).toBe(3);
+  });
 
+  it('contains a ride with a driver named \'Elsa Frazier\'', () => {
+    expect(rideList.rides.some((ride: Ride) => ride.driver === 'Elsa Frazier')).toBe(true);
+  });
+
+  it('contain a ride with a driver named \'Vilma Rush\'', () => {
+    expect(rideList.rides.some((ride: Ride) => ride.driver === 'Vilma Rush')).toBe(true);
+  });
+
+  it('doesn\'t contain a user named \'Santa\'', () => {
+    expect(rideList.rides.some((ride: Ride) => ride.driver === 'Santa')).toBe(false);
+  });
 
 });
 
