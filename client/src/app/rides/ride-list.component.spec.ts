@@ -128,6 +128,11 @@ describe('Misbehaving Ride List', () => {
     });
   }));
 
+  it('generates an error if we don\'t set up a RideListService', () => {
+    // Since the observer throws an error, we don't expect rides to be defined.
+    expect(rideList.rides).toBeUndefined();
+  });
+
 });
 
 
