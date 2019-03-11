@@ -100,4 +100,31 @@ describe('Ride list service: ', () => {
     req.flush(targetRide);
   });
 
+  it('adding a ride calls api/rides/new', () => {
+    const arlene_id = 'arlene_id';
+    const newRide: Ride = {
+      _id: '',
+      driver: 'Arlene Talley',
+      riders: [],
+      route: [
+        "Elfrida",
+        "Alden"
+      ],
+      roundTrip: false,
+      dateTime: 'Thu Aug 29 1985 23:08:05 GMT+0000 (UTC)',
+      notes: 'Eiusmod ad ipsum laboris amet aute reprehenderit commodo commodo.'
+    };
+
+    rideListService.addNewRide(newRide).subscribe(
+      id => {
+        expect(id).toBe(arlene_id);
+      }
+    );
+
+    const expectedUrl: string = rideListService.baseUrl + '/new';
+    const req = httpTestingController.expectOne(expectedUrl);
+    expect(req.request.method).toEqual('POST');
+    req.flush(arlene_id);
+  });
+
 });
