@@ -28,7 +28,8 @@ export class AddRideComponent implements OnInit {
     // add ride form validations
     this.addRideForm = this.fb.group({
 
-      driver: new FormControl('driver')
+      driver: new FormControl('driver'),
+      notes: new FormControl('notes')
 
     })
 
