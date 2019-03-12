@@ -6,15 +6,65 @@ is potentially helpful and contributed to the shaping of this example -->
     <h2 mat-dialog-title>New Ride</h2>
     <mat-dialog-content layout="column">
       <mat-form-field flex>
-        <input matInput #input id="driverField" placeholder="Driver" [(ngModel)]="data.ride.driver" formControlName="driver"
-               >
+        <input matInput #input id="driverField" placeholder="Driver" [(ngModel)]="data.ride.driver" formControlName="driver">
+
+        <mat-error *ngFor="let validation of add_ride_validation_messages.driver">
+          <mat-error class="error-message" id="driver-error"
+                     *ngIf="addRideForm.get('driver').hasError(validation.type) && (addRideForm.get('driver').dirty || addRideForm.get('driver').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error>
+
       </mat-form-field>
     </mat-dialog-content>
 
     <mat-dialog-content layout="column">
       <mat-form-field flex>
-        <input matInput #input id="notesField" placeholder="Notes" [(ngModel)]="data.ride.notes" formControlName="notes"
-               >
+        <input matInput #input id="notesField" placeholder="Notes" [(ngModel)]="data.ride.notes" formControlName="notes">
+      </mat-form-field>
+
+      <mat-error *ngFor="let validation of add_ride_validation_messages.notes">
+        <mat-error class="error-message" id="notes-error"
+                   *ngIf="addRideForm.get('notes').hasError(validation.type) && (addRideForm.get('notes').dirty || addRideForm.get('notes').touched)">
+          {{validation.message}}
+        </mat-error>
+      </mat-error>
+
+    </mat-dialog-content>
+
+    <mat-dialog-content>
+      <mat-form-field flex>
+        <input matInput #input id="pickupField" placeholder="pickup" [(ngModel)]="data.ride.route[0]" formControlName="pickup">
+      </mat-form-field>
+
+      <mat-error *ngFor="let validation of add_ride_validation_messages.pickup">
+        <mat-error class="error-message" id="pickup-error"
+                   *ngIf="addRideForm.get('pickup').hasError(validation.type) && (addRideForm.get('pickup').dirty || addRideForm.get('pickup').touched)">
+          {{validation.message}}
+        </mat-error>
+      </mat-error>
+
+    </mat-dialog-content>
+
+    <mat-dialog-content>
+      <mat-form-field flex>
+        <input matInput #input id="dropoffField" placeholder="dropoff" [(ngModel)]="data.ride.route[1]" formControlName="dropoff">
+      </mat-form-field>
+
+      <mat-error *ngFor="let validation of add_ride_validation_messages.dropoff">
+        <mat-error class="error-message" id="dropoff-error"
+                   *ngIf="addRideForm.get('dropoff').hasError(validation.type) && (addRideForm.get('dropoff').dirty || addRideForm.get('dropoff').touched)">
+          {{validation.message}}
+        </mat-error>
+      </mat-error>
+
+    </mat-dialog-content>
+
+    <mat-dialog-content layout="column">
+      <mat-form-field>
+        <input matInput [matDatepicker]="myDatepicker" placeholder="Date" [(ngModel)]="data.ride.dateTime" formControlName="dateTime">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
       </mat-form-field>
     </mat-dialog-content>
 
