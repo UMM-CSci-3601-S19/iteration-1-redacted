@@ -36,12 +36,28 @@ is potentially helpful and contributed to the shaping of this example -->
       <mat-form-field flex>
         <input matInput #input id="pickupField" placeholder="pickup" [(ngModel)]="data.ride.route[0]" formControlName="pickup">
       </mat-form-field>
+
+      <mat-error *ngFor="let validation of add_ride_validation_messages.pickup">
+        <mat-error class="error-message" id="pickup-error"
+                   *ngIf="addRideForm.get('pickup').hasError(validation.type) && (addRideForm.get('pickup').dirty || addRideForm.get('pickup').touched)">
+          {{validation.message}}
+        </mat-error>
+      </mat-error>
+
     </mat-dialog-content>
 
     <mat-dialog-content>
       <mat-form-field flex>
         <input matInput #input id="dropoffField" placeholder="dropoff" [(ngModel)]="data.ride.route[1]" formControlName="dropoff">
       </mat-form-field>
+
+      <mat-error *ngFor="let validation of add_ride_validation_messages.dropoff">
+        <mat-error class="error-message" id="dropoff-error"
+                   *ngIf="addRideForm.get('dropoff').hasError(validation.type) && (addRideForm.get('dropoff').dirty || addRideForm.get('dropoff').touched)">
+          {{validation.message}}
+        </mat-error>
+      </mat-error>
+
     </mat-dialog-content>
 
     <mat-dialog-content layout="column">

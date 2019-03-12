@@ -33,6 +33,16 @@ export class AddRideComponent implements OnInit {
       ],
     'notes': [
       {type: 'maxlength', message: 'Notes cannot be more than 120 characters long'}
+    ],
+    'pickup': [
+      {type: 'minlength', message: 'pickup must be at least 2 characters long'},
+      {type: 'maxlength', message: 'pickup cannot be more than 25 characters long'},
+      {type: 'pattern', message: 'pickup must contain only numbers and letters'}
+    ],
+    'dropoff': [
+      {type: 'minlength', message: 'dropoff must be at least 2 characters long'},
+      {type: 'maxlength', message: 'dropoff cannot be more than 25 characters long'},
+      {type: 'pattern', message: 'dropoff must contain only numbers and letters'}
     ]
 
   };
@@ -51,8 +61,16 @@ export class AddRideComponent implements OnInit {
         Validators.maxLength(120)
       ])),
       dateTime: new FormControl('dateTime'),
-      pickup: new FormControl('pickup'),
-      dropoff: new FormControl('dropoff')
+      pickup: new FormControl('pickup', Validators.compose([
+        Validators.minLength(2),
+        Validators.maxLength(25),
+        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\.0-9+)?')
+      ])),
+      dropoff: new FormControl('dropoff', Validators.compose([
+        Validators.minLength(2),
+        Validators.maxLength(25),
+        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\.0-9+)?')
+      ]))
 
     })
 
