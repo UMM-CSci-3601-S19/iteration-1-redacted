@@ -29,7 +29,9 @@ export class AddRideComponent implements OnInit {
     this.addRideForm = this.fb.group({
 
       driver: new FormControl('driver'),
-      notes: new FormControl('notes')
+      notes: new FormControl('notes'),
+      dateTime: new FormControl('dateTime'),
+      roundTrip: new FormControl('roundTrip')
 
     })
 
