@@ -13,8 +13,19 @@ is potentially helpful and contributed to the shaping of this example -->
 
     <mat-dialog-content layout="column">
       <mat-form-field flex>
-        <input matInput #input id="notesField" placeholder="Notes" [(ngModel)]="data.ride.notes" formControlName="notes"
-               >
+        <input matInput #input id="notesField" placeholder="Notes" [(ngModel)]="data.ride.notes" formControlName="notes">
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-content>
+      <mat-form-field flex>
+        <input matInput #input id="pickupField" placeholder="pickup" [(ngModel)]="data.ride.route[0]" formControlName="pickup">
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-content>
+      <mat-form-field flex>
+        <input matInput #input id="dropoffField" placeholder="dropoff" [(ngModel)]="data.ride.route[1]" formControlName="dropoff">
       </mat-form-field>
     </mat-dialog-content>
 

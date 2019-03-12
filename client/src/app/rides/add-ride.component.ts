@@ -38,7 +38,9 @@ export class AddRideComponent implements OnInit {
 
       driver: new FormControl('driver'),
       notes: new FormControl('notes'),
-      dateTime: new FormControl('dateTime')
+      dateTime: new FormControl('dateTime'),
+      pickup: new FormControl('pickup'),
+      dropoff: new FormControl('dropoff')
 
     })
 

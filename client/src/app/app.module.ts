@@ -26,7 +26,7 @@ import {MatDatepickerModule, MatNativeDateModule} from "@angular/material";
     Routing,
     CustomModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   declarations: [
     AppComponent,
