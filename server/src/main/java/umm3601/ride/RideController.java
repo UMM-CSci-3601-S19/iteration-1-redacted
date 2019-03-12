@@ -51,14 +51,6 @@ public class RideController {
       filterDoc = filterDoc.append("driver", contentRegQuery);
     }
 
-    if (queryParams.containsKey("riders")) {
-      String targetContent = (queryParams.get("riders")[0]);
-      Document contentRegQuery = new Document();
-      contentRegQuery.append("$regex", targetContent);
-      contentRegQuery.append("$options", "i");
-      filterDoc = filterDoc.append("riders", contentRegQuery);
-    }
-
     FindIterable<Document> matchingRides = rideCollection.find(filterDoc);
 
     return serializeIterable(matchingRides);
