@@ -98,40 +98,40 @@ public class RideControllerSpec {
     BsonArray docs = parseJsonArray(jsonResult);
 
     assertEquals("Should be 4 rides", 4, docs.size());
-    List<String> names = docs
+    List<String> drivers = docs
       .stream()
       .map(RideControllerSpec::getDriver)
       .sorted()
       .collect(Collectors.toList());
-    List<String> expectedNames = Arrays.asList("Chris", "Sam", "Sandy", "Topher");
-    assertEquals("Names should match", expectedNames, names);
+    List<String> expectedDrivers = Arrays.asList("Chris", "Sam", "Sandy", "Topher");
+    assertEquals("Drivers should match", expectedDrivers, drivers);
   }
 
-//  @Test
-//  public void getRideByName() {
-//    Map<String, String[]> argMap = new HashMap<>();
-//    argMap.put("name", new String[]{"Chris"});
-//    String jsonResult = rideController.getRides(argMap);
-//    BsonArray docs = parseJsonArray(jsonResult);
-//
-//    assertEquals("Should be 1 user", 1, docs.size());
-//    List<String> names = docs
-//      .stream()
-//      .map(RideControllerSpec::getDriver)
-//      .sorted()
-//      .collect(Collectors.toList());
-//    List<String> expectedNames = Arrays.asList("Chris");
-//    assertEquals("Names should match", expectedNames, names);
-//  }
+  @Test
+  public void getRideByDriver() {
+    Map<String, String[]> argMap = new HashMap<>();
+    argMap.put("driver", new String[]{"Topher"});
+    String jsonResult = rideController.getRides(argMap);
+    BsonArray docs = parseJsonArray(jsonResult);
 
-//  @Test
-//  public void getSamById() {
-//    String jsonResult = rideController.getRide(rideFourId.toHexString());
-//    Document sam = Document.parse(jsonResult);
-//    assertEquals("Name should match", "Sam", sam.get("name"));
-//    String noJsonResult = rideController.getRide(new ObjectId().toString());
-//    assertNull("No name should match", noJsonResult);
-//  }
+    assertEquals("Should be 1 user", 1, docs.size());
+    List<String> drivers = docs
+      .stream()
+      .map(RideControllerSpec::getDriver)
+      .sorted()
+      .collect(Collectors.toList());
+    List<String> expectedDrivers = Arrays.asList("Topher");
+    assertEquals("Drivers should match", expectedDrivers, drivers);
+  }
+
+  @Test
+  public void getSamById() {
+    String jsonResult = rideController.getRide(rideFourId.toHexString());
+    Document sam = Document.parse(jsonResult);
+    assertEquals("Driver should match", "Sam", sam.get("driver"));
+    String noJsonResult = rideController.getRide(new ObjectId().toString());
+    assertNull("No driver should match", noJsonResult);
+  }
 
   @Test
   public void addRideTest() {
@@ -145,11 +145,11 @@ public class RideControllerSpec {
     String jsonResult = rideController.getRides(argMap);
     BsonArray docs = parseJsonArray(jsonResult);
 
-    List<String> name = docs
+    List<String> driver = docs
       .stream()
       .map(RideControllerSpec::getDriver)
       .sorted()
       .collect(Collectors.toList());
-    assertEquals("Should return driver of new ride", "Brian", name.get(0));
+    assertEquals("Should return driver of new ride", "Brian", driver.get(0));
   }
 }
