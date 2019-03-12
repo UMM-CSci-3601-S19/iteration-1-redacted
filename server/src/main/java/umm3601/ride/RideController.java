@@ -70,7 +70,7 @@ public class RideController {
       .collect(Collectors.joining(", ", "[", "]"));
   }
 
-  public String addNewRide(String driver, List<String> riders, List<String> route, Boolean roundTrip, Date dateTime, String notes) {
+  public String addNewRide(String driver, List<String> riders, List<String> route, Boolean roundTrip, String dateTime, String notes) {
 
     Document newRide = new Document();
     newRide.append("driver", driver);

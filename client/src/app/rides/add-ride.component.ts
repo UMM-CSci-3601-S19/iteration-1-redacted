@@ -1,7 +1,15 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import {Component, Inject, NgModule, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 import {Ride} from './ride';
 import {FormControl, Validators, FormGroup, FormBuilder} from "@angular/forms";
+
+@NgModule({
+  imports:
+    [
+      MatDatepickerModule,
+      MatNativeDateModule,
+    ]
+})
 
 @Component({
   selector: 'add-ride.component',
@@ -30,8 +38,7 @@ export class AddRideComponent implements OnInit {
 
       driver: new FormControl('driver'),
       notes: new FormControl('notes'),
-      dateTime: new FormControl('dateTime'),
-      roundTrip: new FormControl('roundTrip')
+      dateTime: new FormControl('dateTime')
 
     })
 
