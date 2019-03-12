@@ -30,7 +30,10 @@ export class AddRideComponent implements OnInit {
       {type: 'minlength', message: 'Name must be at least 2 characters long'},
       {type: 'maxlength', message: 'Name cannot be more than 25 characters long'},
       {type: 'pattern', message: 'Name must contain only numbers and letters'}
-      ]
+      ],
+    'notes': [
+      {type: 'maxlength', message: 'Notes cannot be more than 120 characters long'}
+    ]
 
   };
 
@@ -44,7 +47,9 @@ export class AddRideComponent implements OnInit {
         Validators.maxLength(25),
         Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\.0-9+)?')
       ])),
-      notes: new FormControl('notes'),
+      notes: new FormControl('notes', Validators.compose([
+        Validators.maxLength(120)
+      ])),
       dateTime: new FormControl('dateTime'),
       pickup: new FormControl('pickup'),
       dropoff: new FormControl('dropoff')
