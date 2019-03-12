@@ -50,7 +50,7 @@ public class RideRequestHandler {
     List<String> riders = newRide.getList("riders", String.class);
     List<String> route = newRide.getList("route", String.class);
     Boolean roundTrip = newRide.getBoolean("roundTrip");
-    Date dateTime = newRide.getDate("dateTime");
+    String dateTime = newRide.getString("dateTime");
     String notes = newRide.getString("notes");
 
     System.err.println("Adding new vehicle [driver=" + driver + ", riders=" + riders + " route=" + route + " roundTrip=" + roundTrip + "dateTime=" + dateTime +" notes=" + notes + ']');
