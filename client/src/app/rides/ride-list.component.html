@@ -1,0 +1,35 @@
+<div>
+  <button id="addNewRide" mat-raised-button (click)="openDialog()">Add New Ride</button>
+</div>
+
+
+<div layout-gt-sm="row">
+  <div flex-gt-sm="80" flex-offset-gt-sm="10">
+    <mat-card>
+      <mat-card-title id="ride-list-title">Rides</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+
+        <mat-card *ngIf="rides; else ridesError" >
+            <mat-card *ngFor="let ride of this.filterRides()">
+              <mat-card-title>{{ride.route[ride.route.length-1]}}</mat-card-title>
+
+
+
+            <mat-card-content>{{ride.driver}}<br/>{{ride.riders}}<br/>{{ride.dateTime}}<br/>{{ride.notes}}</mat-card-content>
+            </mat-card>
+        </mat-card>
+        <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
+        <ng-template #ridesError>
+          <mat-error>
+            There was a problem loading the rides. Possibly the server is down or perhaps there are network
+            issues.
+          </mat-error>
+          <mat-error>
+            Please wait a bit and try again or start the server.
+          </mat-error>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

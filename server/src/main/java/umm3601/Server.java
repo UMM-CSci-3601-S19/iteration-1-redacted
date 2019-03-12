@@ -4,23 +4,37 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import spark.Request;
 import spark.Response;
+import umm3601.ride.RideController;
+import umm3601.ride.RideRequestHandler;
 import umm3601.user.UserController;
 import umm3601.user.UserRequestHandler;
+import umm3601.vehicle.VehicleController;
+import umm3601.vehicle.VehicleRequestHandler;
 
 import static spark.Spark.*;
 import static spark.debug.DebugScreen.enableDebugScreen;
 
 public class Server {
   private static final String userDatabaseName = "dev";
+  private static final String vehicleDatabaseName = "dev";
+  private static final String rideDatabaseName = "dev";
   private static final int serverPort = 4567;
 
   public static void main(String[] args) {
 
     MongoClient mongoClient = new MongoClient();
     MongoDatabase userDatabase = mongoClient.getDatabase(userDatabaseName);
+    MongoDatabase vehicleDatabase = mongoClient.getDatabase(vehicleDatabaseName);
+    MongoDatabase rideDatabase = mongoClient.getDatabase(rideDatabaseName);
 
     UserController userController = new UserController(userDatabase);
     UserRequestHandler userRequestHandler = new UserRequestHandler(userController);
+
+    VehicleController vehicleController = new VehicleController(vehicleDatabase);
+    VehicleRequestHandler vehicleRequestHandler = new VehicleRequestHandler(vehicleController);
+
+    RideController rideController = new RideController(rideDatabase);
+    RideRequestHandler rideRequestHandler = new RideRequestHandler(rideController);
 
     //Configure Spark
     port(serverPort);
@@ -63,6 +77,14 @@ public class Server {
     get("api/users", userRequestHandler::getUsers);
     get("api/users/:id", userRequestHandler::getUserJSON);
     post("api/users/new", userRequestHandler::addNewUser);
+
+    get("api/vehicles", vehicleRequestHandler::getVehicles);
+    get("api/vehicles/:id", vehicleRequestHandler::getVehicleJSON);
+    post("api/vehicles/new", vehicleRequestHandler::addNewVehicle);
+
+    get("api/rides", rideRequestHandler::getRides);
+    get("api/rides/:id", rideRequestHandler::getRideJSON);
+    post("api/rides/new", rideRequestHandler::addNewRide);
 
     // An example of throwing an unhandled exception so you can see how the
     // Java Spark debugger displays errors like this.
