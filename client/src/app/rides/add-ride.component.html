@@ -62,7 +62,7 @@ is potentially helpful and contributed to the shaping of this example -->
 
     <mat-dialog-content layout="column">
       <mat-form-field>
-        <input matInput [matDatepicker]="myDatepicker" placeholder="Date" [(ngModel)]="data.ride.dateTime" formControlName="dateTime">
+        <input matInput id="dateField" [matDatepicker]="myDatepicker" placeholder="Date" [(ngModel)]="data.ride.dateTime" formControlName="dateTime">
         <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
         <mat-datepicker #myDatepicker></mat-datepicker>
       </mat-form-field>

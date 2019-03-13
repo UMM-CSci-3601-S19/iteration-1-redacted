@@ -11,7 +11,7 @@
       <mat-card-content>
 
         <mat-card *ngIf="rides; else ridesError" >
-            <mat-card *ngFor="let ride of this.filterRides()" [id]="ride._id.$oid">
+            <mat-card *ngFor="let ride of this.filterRides()" #elem class="rides" [id]="ride._id.$oid">
               <mat-card-title>{{ride.route[ride.route.length-1]}}</mat-card-title>
 
 
