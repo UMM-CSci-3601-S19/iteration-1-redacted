@@ -9,7 +9,7 @@ export class HomeComponent {
   public body: string;
 
   constructor() {
-    this.header = 'MoRide';
-    this.body = 'Welcome to MoRide!  Helping people carpool since 2019!'
+    this.header = 'Welcome to MoRide!';
+    this.body = 'Helping people carpool since 2019!'
   }
 }
