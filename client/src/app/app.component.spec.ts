@@ -30,8 +30,8 @@ describe('AppComponent', () => {
     expect(appFixture).toBeTruthy();
   });
 
-  it(`should have as title 'app'`, () => {
-    expect(appInstance.title).toEqual('Mongo-Angular-Spark lab');
+  it(`should have as title 'MoRide'`, () => {
+    expect(appInstance.title).toEqual('MoRide');
   });
 
   it('should render title in the navbar', () => {

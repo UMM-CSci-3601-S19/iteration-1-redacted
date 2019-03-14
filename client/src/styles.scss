@@ -1,5 +1,23 @@
 @import "theme";
 /* You can add global styles to this file, and also import other style files */
+
+.mat-toolbar {
+  background-color: maroon;
+  color: whitesmoke;
+}
+
+.td-layout-sidenav {
+  background-color: maroon;
+
+}
+
+.td-layout-sidenav .drawerIcons {
+  color: whitesmoke;
+  .mat-icon {
+    color: whitesmoke;
+  }
+}
+
 .nav-active {
   background-color: mat-color($mat-grey, 100) !important;
   color: mat-color($accent) !important;
@@ -7,4 +25,13 @@
 
 .nav-active mat-icon {
   color: mat-color($accent) !important;
+}
+
+.mat-card {
+  background-color: maroon;
+  color: gold;
+}
+
+#postCard {
+  background-color: gold;
 }

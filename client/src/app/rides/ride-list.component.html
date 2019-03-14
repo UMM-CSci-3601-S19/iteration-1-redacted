@@ -9,13 +9,9 @@
       <mat-card-title id="ride-list-title">Rides</mat-card-title>
       <mat-divider></mat-divider>
       <mat-card-content>
-
-        <mat-card *ngIf="rides; else ridesError" >
+        <mat-card id= "postCard"*ngIf="rides; else ridesError" >
             <mat-card *ngFor="let ride of this.filterRides()">
               <mat-card-title>{{ride.route[ride.route.length-1]}}</mat-card-title>
-
-
-
             <mat-card-content>{{ride.driver}}<br/>{{ride.riders}}<br/>{{ride.dateTime}}<br/>{{ride.notes}}</mat-card-content>
             </mat-card>
         </mat-card>

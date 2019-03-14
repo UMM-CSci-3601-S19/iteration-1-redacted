@@ -1,8 +1,8 @@
 
 export interface Ride {
+  _id: string;
   driver: string;
   riders: string[];
-  _id: string;
   route: string[];
   roundTrip: boolean;
   dateTime: string;
