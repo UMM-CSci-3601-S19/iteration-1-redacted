@@ -2,22 +2,24 @@
   <button id="addNewRide" mat-raised-button (click)="openDialog()">Add New Ride</button>
 </div>
 
-
-<div layout-gt-sm="row">
-  <div flex-gt-sm="80" flex-offset-gt-sm="10">
+<div class="wrapper">
+<div>
+  <div>
     <mat-card>
-      <mat-card-title id="ride-list-title">Rides</mat-card-title>
-      <mat-divider></mat-divider>
+      <mat-card-title id="ride-list-title">Available Ride Listings</mat-card-title>
+    </mat-card>
+    <mat-card *ngIf="rides; else ridesError" >
       <mat-card-content>
-
-        <mat-card *ngIf="rides; else ridesError" >
-            <mat-card *ngFor="let ride of this.filterRides()">
-              <mat-card-title>{{ride.route[ride.route.length-1]}}</mat-card-title>
-
-
-
-            <mat-card-content>{{ride.driver}}<br/>{{ride.riders}}<br/>{{ride.dateTime}}<br/>{{ride.notes}}</mat-card-content>
-            </mat-card>
+        <mat-card class="postCard" *ngFor="let ride of this.filterRides()">
+          <mat-card-title>{{ride.route[0]}} <mat-icon>play_arrow</mat-icon> {{ride.route[ride.route.length-1]}} </mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            This trip is being offered by {{ride.driver}}
+            <br/> Current number of riders: {{ride.riders.length}}
+            <br/> The current date for this trip: {{ride.dateTime}}
+            <br/> Additional Notes:
+            <br/> -- {{ride.notes}}
+          </mat-card-content>
         </mat-card>
         <!-- Maybe this should be a pop-up instead of just a text message? Not sure. -->
         <ng-template #ridesError>
@@ -32,4 +34,5 @@
       </mat-card-content>
     </mat-card>
   </div>
+</div>
 </div>

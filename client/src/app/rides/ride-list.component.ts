@@ -62,7 +62,6 @@ export class RideListComponent implements OnInit {
 
     this.filteredRides = this.rides;
 
-
     return this.filteredRides;
   }
 

@@ -25,9 +25,25 @@ export class UserListComponent implements OnInit {
   // The ID of the
   private highlightedID: string = '';
 
+  // Static references for displaying an example profile page
+  public exampleUser: string;
+  public exampleEmail: string;
+  public exampleBio: string;
+  public exampleMakeModel: string;
+  public exampleYear: string;
+  public exampleColor: string;
+  public exampleNotes: string;
+
   // Inject the UserListService into this component.
   constructor(public userListService: UserListService, public dialog: MatDialog) {
 
+    this.exampleUser = 'Albert Einstein';
+    this.exampleEmail = 'Albert.Einstein@nointernet.yet';
+    this.exampleBio = 'I am a German-born theoretical physicist who discovered the theory of relativity! Also I never learned how to drive!';
+    this.exampleMakeModel = 'Pontiac Torpedo';
+    this.exampleYear = '1940';
+    this.exampleColor = 'Black';
+    this.exampleNotes = 'Nearly 80 years old, but it\'s still brand new.';
   }
 
   isHighlighted(user: User): boolean {

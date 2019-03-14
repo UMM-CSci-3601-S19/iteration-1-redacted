@@ -1,12 +1,15 @@
 import {Component} from '@angular/core';
 
 @Component({
-  templateUrl: 'home.component.html'
+  templateUrl: 'home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  public text: string;
+  public header: string;
+  public body: string;
 
   constructor() {
-    this.text = 'MoRide';
+    this.header = 'Welcome to MoRide!';
+    this.body = 'Helping people carpool since 2019!'
   }
 }

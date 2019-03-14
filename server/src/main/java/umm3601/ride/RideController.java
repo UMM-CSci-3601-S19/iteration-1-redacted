@@ -64,6 +64,8 @@ public class RideController {
 
   public String addNewRide(String driver, List<String> riders, List<String> route, Boolean roundTrip, String dateTime, String notes) {
 
+    dateTime = convertDate(dateTime);
+
     Document newRide = new Document();
     newRide.append("driver", driver);
     newRide.append("riders", riders);
@@ -81,5 +83,12 @@ public class RideController {
       me.printStackTrace();
       return null;
     }
+  }
+
+  private String convertDate(String jsonDate) {
+
+    jsonDate = jsonDate.substring(5, 7) + "/" + jsonDate.substring(8, 10) + "/" + jsonDate.substring(0, 4);
+
+    return jsonDate;
   }
 }

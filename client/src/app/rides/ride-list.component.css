@@ -7,3 +7,39 @@
   padding-right: 14px;
 }
 
+#ride-list-title {
+  background: maroon linear-gradient(black, maroon);
+  text-align: center;
+  font-family: "Arial Black";
+
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-card {
+  background-color: gold;
+  color: white;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.mat-card .postCard {
+  background-color: #2e2e2e;
+  font-family: "Verdana";
+}
+
+.mat-card .postCard .mat-card-title {
+  background: maroon linear-gradient(maroon, #2e2e2e);
+  font-family: "Arial Black";
+  text-align: center;
+}
+
+#addNewRide {
+  font-family: "Verdana";
+}
+
+
