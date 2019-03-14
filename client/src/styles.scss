@@ -8,7 +8,6 @@
 
 .td-layout-sidenav {
   background-color: maroon;
-
 }
 
 .td-layout-sidenav .drawerIcons {
@@ -27,11 +26,6 @@
   color: mat-color($accent) !important;
 }
 
-.mat-card {
-  background-color: maroon;
-  color: gold;
-}
-
-#postCard {
-  background-color: gold;
+.td-layout-sidenav title {
+  text-size: 150%;
 }
