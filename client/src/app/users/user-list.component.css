@@ -31,3 +31,11 @@ img {
 .picBoxes {
   max-width: 100%;
 }
+
+.mat-card .mat-card-title {
+  font-family: "Arial Black";
+}
+
+.mat-card {
+  font-family: Verdana;
+}
