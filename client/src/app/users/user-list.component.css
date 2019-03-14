@@ -7,3 +7,17 @@
   padding-right: 14px;
 }
 
+img {
+  border: 2px solid gold;
+  align-self: right;
+  max-width: 100%;
+  height: auto;
+}
+
+.cardInner {
+  display: grid;
+  grid-template-areas: "name picture" "contactInfo picture" "vehicle vehiclePicture";
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
