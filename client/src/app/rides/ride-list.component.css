@@ -10,6 +10,7 @@
 #ride-list-title {
   background: maroon linear-gradient(black, maroon);
   text-align: center;
+  font-family: "Arial Black";
 }
 
 .mat-card {
@@ -19,10 +20,16 @@
 
 .mat-card .postCard {
   background-color: #2e2e2e;
+  font-family: "Verdana";
 }
 
 .mat-card .postCard .mat-card-title {
   background: maroon linear-gradient(maroon, #2e2e2e);
+  font-family: "Arial Black";
+}
+
+#addNewRide {
+  font-family: "Verdana";
 }
 
 
