@@ -8,9 +8,9 @@
     <mat-card>
       <mat-card-title id="ride-list-title">Available Ride Listings</mat-card-title>
     </mat-card>
-    <mat-card *ngIf="rides; else ridesError" >
+    <mat-card *ngFor="let ride of this.filterRides()">
       <mat-card-content>
-        <mat-card class="postCard" *ngFor="let ride of this.filterRides()">
+        <mat-card class="postCard" *ngIf="rides; else ridesError">
           <mat-card-title>{{ride.route[0]}} <mat-icon>play_arrow</mat-icon> {{ride.route[ride.route.length-1]}} </mat-card-title>
           <mat-divider></mat-divider>
           <mat-card-content>
