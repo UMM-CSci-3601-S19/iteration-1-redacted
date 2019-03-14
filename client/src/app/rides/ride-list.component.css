@@ -7,3 +7,22 @@
   padding-right: 14px;
 }
 
+#ride-list-title {
+  background: maroon linear-gradient(black, maroon);
+  text-align: center;
+}
+
+.mat-card {
+  background-color: gold;
+  color: white;
+}
+
+.mat-card .postCard {
+  background-color: #2e2e2e;
+}
+
+.mat-card .postCard .mat-card-title {
+  background: maroon linear-gradient(maroon, #2e2e2e);
+}
+
+
