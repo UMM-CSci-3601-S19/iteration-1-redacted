@@ -5,16 +5,16 @@
       <mat-divider></mat-divider>
       <mat-card-content>
         <div class="cardInner">
-          <div id="nameBox"[style.grid-area]="'name'">
+          <div class="boxes" id="nameBox"[style.grid-area]="'name'">
             My name is {{this.exampleUser}}
             <br/> <br/>
             {{this.exampleBio}}
             <hr>
           </div>
-          <div id="pictureBox" [style.grid-area]="'picture'">
+          <div class="picBoxes" id="pictureBox" [style.grid-area]="'picture'">
             <img id="profilePicture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/220px-Albert_Einstein_Head.jpg" alt="Albert Einstein Profile Picture">
           </div>
-          <div id="vehicleBox" [style.grid-area]="'vehicle'">
+          <div class="boxes" id="vehicleBox" [style.grid-area]="'vehicle'">
             <h3>Vehicle Information:</h3>
             - {{this.exampleYear}} {{this.exampleMakeModel}}
             <br/>
@@ -22,12 +22,12 @@
             <br/>
             - Notes: {{this.exampleNotes}}
           </div>
-          <div id="contactInfoBox" [style.grid-area]="'contactInfo'">
+          <div class="boxes" id="contactInfoBox" [style.grid-area]="'contactInfo'">
             <h3>Contact Info:</h3>
             - Email: {{this.exampleEmail}}
             <hr>
           </div>
-          <div id="vehiclePictureBox" [style.grid-area]="'vehiclePicture'">
+          <div class="picBoxes" id="vehiclePictureBox" [style.grid-area]="'vehiclePicture'">
             <img id="vehiclePic" src="https://www.oaklandpontiacworldwide.com/membercars/opw_1940blackpontiac_mcl.jpg" alt="Picture of {{this.exampleUser}}'s car">
           </div>
         </div>
