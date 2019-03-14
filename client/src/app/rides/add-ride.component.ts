@@ -57,7 +57,7 @@ export class AddRideComponent implements OnInit {
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(25),
-        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\.0-9+)?')
+        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\0-9+)?')
       ])),
       notes: new FormControl('notes', Validators.compose([
         Validators.maxLength(120)
@@ -67,13 +67,13 @@ export class AddRideComponent implements OnInit {
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(25),
-        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\.0-9+)?')
+        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\0-9+)?')
       ])),
       dropoff: new FormControl('dropoff', Validators.compose([
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(25),
-        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\.0-9+)?')
+        Validators.pattern('^[A-Za-z0-9\\s]+[A-Za-z0-9\\s]+$(\\0-9+)?')
       ]))
 
     })
