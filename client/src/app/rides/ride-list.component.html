@@ -10,7 +10,7 @@
     </mat-card>
     <mat-card *ngFor="let ride of this.filterRides()">
       <mat-card-content>
-        <mat-card class="postCard" *ngIf="rides; else ridesError">
+        <mat-card class="postCard" *ngIf="rides; else ridesError" [id]="ride.driver">
           <mat-card-title>{{ride.route[0]}} <mat-icon>play_arrow</mat-icon> {{ride.route[ride.route.length-1]}} </mat-card-title>
           <mat-divider></mat-divider>
           <mat-card-content>

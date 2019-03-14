@@ -60,36 +60,26 @@ describe('Ride list', () => {
 
   describe('Add Ride', () => {
 
-    // Everything is working but this test is causing problems
-    // beforeEach(() => {
-    //   page.navigateTo();
-    //   page.click('addNewRide');
-    // });
-    //
-    // it('Should actually add the ride with the information we put in the fields', () => {
-    //   page.navigateTo();
-    //   page.click('addNewRide');
-    //   page.field('driverField').sendKeys('Tracy Kim');
-    //   // Need to clear the age field because the default value is -1.
-    //   page.field('notesField').sendKeys('Notes');
-    //   page.field('pickupField').sendKeys('Here');
-    //   page.field('dropoffField').sendKeys('there');
-    //   page.field('dateField').sendKeys('3/27/2018');
-    //   expect(page.button('confirmAddRideButton').isEnabled()).toBe(true);
-    //   page.click('confirmAddRideButton');
-    //
-    //   /*
-    //    * This tells the browser to wait until the (new) element with ID
-    //    * 'tracy@awesome.com' becomes present, or until 10,000ms whichever
-    //    * comes first. This allows the test to wait for the server to respond,
-    //    * and then for the client to display this new ride.
-    //    * http://www.protractortest.org/#/api?view=ProtractorExpectedConditions
-    //    */
-    //   const tracy_element = element(by.id('Here'));
-    //   browser.wait(protractor.ExpectedConditions.presenceOf(tracy_element), 10000);
-    //
-    //   expect(page.getUniqueRide('Here')).toMatch('Here.*'); // toEqual('Tracy Kim');
-    // });
+    beforeEach(() => {
+      page.navigateTo();
+      page.click('addNewRide');
+    });
+
+    it('Should actually add the ride with the information we put in the fields', () => {
+
+      page.field('driverField').sendKeys('Tracy Kim');
+      page.field('notesField').sendKeys('Notes');
+      page.field('pickupField').sendKeys('Here');
+      page.field('dropoffField').sendKeys('there');
+      page.field('dateField').sendKeys('3/27/2018');
+      expect(page.button('confirmAddRideButton').isEnabled()).toBe(true);
+      page.click('confirmAddRideButton');
+
+      const tracy_element = element(by.id('Tracy Kim'));
+      browser.wait(protractor.ExpectedConditions.presenceOf(tracy_element), 10000);
+
+      expect(page.getUniqueRide('Tracy Kim')).toMatch('Tracy Kim.*'); // toEqual('Tracy Kim');
+    });
 
 
 

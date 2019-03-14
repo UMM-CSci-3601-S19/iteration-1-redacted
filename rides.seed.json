@@ -1,6 +1,8 @@
 [
   {
-    "_id": "5c8a01392167fbb8dc24ba0a",
+    "_id": {
+      "$oid": "5c8a01392167fbb8dc24ba0a"
+    },
     "driver": "Tracy Curry",
     "riders": [],
     "route": [
@@ -12,7 +14,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a013978e165b75254938c",
+    "_id": {
+      "$oid": "5c8a013978e165b75254938c"
+    },
     "driver": "Soto Hawkins",
     "riders": [],
     "route": [
@@ -24,7 +28,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a0139a78bd94cc00ac2db",
+    "_id": {
+      "$oid": "5c8a0139a78bd94cc00ac2db"
+    },
     "driver": "Patton Holland",
     "riders": [],
     "route": [
@@ -36,7 +42,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a0139380bf44ef26f03be",
+    "_id": {
+      "$oid": "5c8a0139380bf44ef26f03be"
+    },
     "driver": "Pacheco Nolan",
     "riders": [],
     "route": [
@@ -48,7 +56,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a0139c46eae0ebbbf55b7",
+    "_id": {
+      "$oid": "5c8a0139c46eae0ebbbf55b7"
+    },
     "driver": "Casey Hamilton",
     "riders": [],
     "route": [
@@ -60,7 +70,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a0139c07f11ea5dffe1ea",
+    "_id": {
+      "$oid": "5c8a0139c07f11ea5dffe1ea"
+    },
     "driver": "Twila Kline",
     "riders": [],
     "route": [
@@ -72,7 +84,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a013964164e3d68169710",
+    "_id": {
+      "$oid": "5c8a013964164e3d68169710"
+    },
     "driver": "Whitehead Solis",
     "riders": [],
     "route": [
@@ -84,7 +98,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a0139163b7610e8b32f21",
+    "_id": {
+      "$oid": "5c8a0139163b7610e8b32f21"
+    },
     "driver": "Lily Guy",
     "riders": [],
     "route": [
@@ -96,7 +112,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a01396d7193eb01ad5bd8",
+    "_id": {
+      "$oid": "5c8a01396d7193eb01ad5bd8"
+    },
     "driver": "Theresa Trujillo",
     "riders": [],
     "route": [
@@ -108,7 +126,9 @@
     "notes": "Nothing special on this trip"
   },
   {
-    "_id": "5c8a0139edb281ce8f09801b",
+    "_id": {
+      "$oid": "5c8a0139edb281ce8f09801b"
+    },
     "driver": "Vega Hopper",
     "riders": [],
     "route": [
